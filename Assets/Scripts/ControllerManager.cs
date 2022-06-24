@@ -13,7 +13,10 @@ public class ControllerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        // deactivate the teleportation
+        rayInteractor.enabled = false;
+        lineVisual.enabled = false;
+        line.enabled = false;
     }
 
     // Update is called once per frame
@@ -21,7 +24,7 @@ public class ControllerManager : MonoBehaviour
     {
         float thumbstickValue = Input.GetAxis(thumbStick);
 
-        Debug.Log(thumbstickValue);
+       // Debug.Log(thumbstickValue);
 
         if(thumbstickValue < -0.5f)
         {
@@ -29,13 +32,6 @@ public class ControllerManager : MonoBehaviour
             rayInteractor.enabled = true;
             lineVisual.enabled = true;
             line.enabled = true;
-        }
-        else
-        {
-            // deactivate the teleportation
-            rayInteractor.enabled = false;
-            lineVisual.enabled = false;
-            line.enabled = false;
         }
     }
 }
